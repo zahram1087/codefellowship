@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>People</title>
+    <div th:replace="~{common :: head}"></div>
+</head>
+
+<body>
+<h1>Welcome</h1>
+
+<ul>
+    <h2>People</h2>
+    <li th:each="al : ${users}">
+        <span th:text="${al.firstName}"></span> <span th:text="${al.lastName}"></span>
+        <span th:text="${al.dateofBirth}"></span>  <span th:text="${al.bio}"></span>
+    <li/>
+
+</ul>
+<img src="./resources/img/user.png" alt="user image"/>
+
+</body>
+
+</html>
