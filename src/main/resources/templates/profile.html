@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>People</title>
+    <div th:replace="~{common :: head}"></div>
+</head>
+
+<body>
+<div class = "container">
+<h1>Welcome</h1>
+
+<ul>
+    <h2>People</h2>
+    <li th:each="al : ${profiles}">
+        <p th:text="${al.firstName}"></p>
+        <p th:text="${al.lastName}"></p>
+        <p th:text="${al.dateofBirth}"></p>
+        <p th:text="${al.bio}"></p>
+        <img src="/img/user.png" alt="user image"/>
+    <li/>
+</ul>
+
+<a href="/">HOME</a>
+
+</div>
+</body>
+
+</html>

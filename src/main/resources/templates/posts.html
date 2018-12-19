@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Blog Posts</title>
+    <div th:replace="~{common :: head}"></div>
+</head>
+
+<body>
+<h1>Welcome</h1>
+<h2>Blog Posts</h2>
+<main>
+    <label>Username</label>
+    <h3 th:text="${user.username}">username</h3>
+    <img src="/img/user.png" alt="user image"/>
+
+    <ul>
+        <h2>POSTS</h2>
+        <li th:each="al : ${posts}">
+            <p th:text="${al.comment}"></p>
+            <p th:text="${al.date}"></p>
+
+        <li/>
+    </ul>
+
+
+
+</main>
+
+
+<h2>Add A Post!</h2>
+<form action="/posts" method="POST">
+    <label>POST</label><input name="comment"/>
+    <!--<label>DATE</label><input type="date" name="date"/>-->
+    <input type="submit"/>
+</form>
+
+</body>
+
+</html>

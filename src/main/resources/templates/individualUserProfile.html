@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>People</title>
+    <div th:replace="~{common :: head}"></div>
+</head>
+
+<body>
+<div class = "container">
+<h1>Welcome</h1>
+    <h2> User Profile</h2>
+    <main>
+        <label>Username</label>
+        <h3 th:text="${user.username}">username</h3>
+        <img src="/img/user.png" alt="user image"/>
+        <div>
+            <label>First Name</label>
+            <span th:text="${user.firstName}"></span>
+
+            <label>Last Name</label>
+            <span th:text="${user.lastName}"></span>
+
+            <label>Birthday</label>
+            <span th:text="${user.dateofBirth}"></span>
+
+            <label>Biography</label>
+            <span th:text="${user.bio}"></span>
+
+        </div>
+    </main>
+
+</div>
+</body>
+
+</html>
