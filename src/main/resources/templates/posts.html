@@ -17,9 +17,8 @@
 
     <ul>
         <h2>POSTS</h2>
-        <li th:each="al : ${posts}">
-            <p th:text="${al.comment}"></p>
-            <p th:text="${al.date}"></p>
+            <p th:text="${comment}"></p>
+            <p th:text="${comment}"></p>
 
         <li/>
     </ul>
@@ -28,11 +27,9 @@
 
 </main>
 
-
 <h2>Add A Post!</h2>
 <form action="/posts" method="POST">
     <label>POST</label><input name="comment"/>
-    <!--<label>DATE</label><input type="date" name="date"/>-->
     <input type="submit"/>
 </form>
 
