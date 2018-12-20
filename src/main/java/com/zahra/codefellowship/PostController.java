@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.security.Principal;
@@ -16,6 +14,10 @@ import java.util.Date;
 public class PostController {
     @Autowired
     PostRepository postRepo;
+
+    @Autowired
+    private ApplicationUserRepository userRepo;
+
 
 //    //GET request for posts
 //    @RequestMapping(value="/posts", method= RequestMethod.GET)
@@ -31,19 +33,34 @@ public class PostController {
         m.addAttribute("user",((UsernamePasswordAuthenticationToken)p).getPrincipal());
         return "posts";
     }
+//
+    @PostMapping(value="/users/{userId}/post")
+    public RedirectView addPost(@PathVariable long userId,
+                               @RequestParam String comment){
+        ApplicationUser user = userRepo.findById(userId).get();
 
-    @RequestMapping(value="/posts", method=RequestMethod.POST)
-    public RedirectView create(@RequestParam String comment,
-                               @RequestParam String createdDate){
-        Post newPost = new Post(comment,createdDate);
-        postRepo.save(newPost);
-        return new RedirectView("/posts");
+        Post post = new Post(comment, new Date());
+        post.applicationUser = user;
+//        user.addPost(post);
+        postRepo.save(post);
+        return new RedirectView("/users/{userId}");
 
     }
+    @GetMapping("/users/{userId}")
+    public String getPosts(@PathVariable long userId, Model model) {
 
-    //GET request for post
-    @RequestMapping(value = "/posts", method=RequestMethod.GET)
-    public String posts(){
+        model.addAttribute("user", userRepo.findById(userId).get());
+        return "posts";
+    }
+
+    @RequestMapping(value="/myPosts", method=RequestMethod.GET)
+    public String myPosts(Principal p,
+                            Model m){
+        //grab all the information from the database
+        System.out.println(p);
+
+        m.addAttribute("user",((UsernamePasswordAuthenticationToken)p).getPrincipal());
+
         return "posts";
     }
 

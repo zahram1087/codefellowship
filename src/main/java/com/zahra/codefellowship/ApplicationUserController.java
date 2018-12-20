@@ -85,6 +85,9 @@ public class ApplicationUserController {
        }
     }
 
+    //adding posts here
+
+
 
 }
 // cam from: https://stackoverflow.com/questions/2066946/trigger-404-in-spring-mvc-controller
