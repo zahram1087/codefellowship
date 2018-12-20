@@ -11,7 +11,8 @@ public class Post {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     public long id;
     public String comment;
-    public Timestamp ts;
+    public String createdDate;
+
 
 
 
@@ -20,14 +21,14 @@ public class Post {
 
     public  Post(){}
 
-    public Post (String comment,Timestamp ts ){
+    public Post (String comment, String createdDate  ){
         this.comment=comment;
-        this.ts = 
+        this.createdDate=createdDate;
 
     }
 
     public String toString(){
-        return "Comment: "+ comment+"\n"+"Time: "+ date+"\n"+"By: "+ this.applicationUser;
+        return "Comment: "+ comment+"\n"+"By: "+ this.applicationUser;
     }
 
     //user =albums;

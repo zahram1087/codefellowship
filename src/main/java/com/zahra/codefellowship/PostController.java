@@ -34,15 +34,18 @@ public class PostController {
 
     @RequestMapping(value="/posts", method=RequestMethod.POST)
     public RedirectView create(@RequestParam String comment,
-                               @RequestParam String date){
-        Post newPost = new Post(comment,date);
+                               @RequestParam String createdDate){
+        Post newPost = new Post(comment,createdDate);
         postRepo.save(newPost);
         return new RedirectView("/posts");
 
-        //Principal p
-
     }
 
+    //GET request for post
+    @RequestMapping(value = "/posts", method=RequestMethod.GET)
+    public String posts(){
+        return "posts";
+    }
 
 
 }
