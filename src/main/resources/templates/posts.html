@@ -8,18 +8,17 @@
 </head>
 
 <body>
-
-
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
             <img src="/img/user.png" width="30" height="30" alt="">
             <h3 th:text="${user.username}">username</h3>
         </a>
+        <form action="/perform_logout" method="POST">
+            <button type="submit" class="btn btn-success"><a href="/login">Logout</a></button>
+        </form>
     </nav>
     <div class = "container">
-    <form action="/perform_logout" method="POST">
-        <button type="submit" class="btn btn-success"><a href="/login">Logout</a></button>
-    </form>
+
     <!--<div>-->
         <!--<h2>Logged in User</h2>-->
         <!--<h3 th:text="${user.username}">username</h3>-->
