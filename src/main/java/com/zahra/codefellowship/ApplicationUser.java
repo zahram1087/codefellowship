@@ -23,7 +23,7 @@ public class ApplicationUser implements UserDetails {
     public String bio;
 
     @OneToMany(mappedBy="applicationUser")
-    public List<Post> post;
+    public List<Post> posts;
 
     public ApplicationUser(){}
 
@@ -77,5 +77,9 @@ public String toString (){
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public List<Post>getPosts(){
+        return posts;
     }
 }

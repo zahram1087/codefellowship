@@ -8,6 +8,11 @@
 </head>
 
 <body>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="/img/user.png" width="30" height="30" alt="">
+    </a>
+</nav>
 <div class = "container">
 
     <h1>Welcome</h1>
@@ -16,9 +21,11 @@
     <form action="/perform_login" method="POST">
         <label>Username</label><input name="username"/>
         <label>Password</label><input type="password" name="password"/>
-        <input type="submit"/>
+        <button type="submit" class="btn btn-success">submit</button>
+        <!--<input type="submit"/>-->
     </form>
-    <a href="/">HOME</a>
+
+    <button type="submit" class="btn btn-success"><a href="/">HOME</a></button>
 </div>
 </body>
 

@@ -3,7 +3,11 @@ package com.zahra.codefellowship;
 import javax.persistence.*;
 import java.security.Principal;
 import java.security.Timestamp;
+import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
+
+import static java.text.DateFormat.getDateTimeInstance;
 
 @Entity
 public class Post {
@@ -11,7 +15,7 @@ public class Post {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     public long id;
     public String comment;
-    public String createdDate;
+    public Date createdDate;
 
 
 
@@ -21,7 +25,7 @@ public class Post {
 
     public  Post(){}
 
-    public Post (String comment, String createdDate  ){
+    public Post (String comment, Date createdDate  ){
         this.comment=comment;
         this.createdDate=createdDate;
 
@@ -31,7 +35,18 @@ public class Post {
         return "Comment: "+ comment+"\n"+"By: "+ this.applicationUser;
     }
 
-    //user =albums;
+    public void addPost(Post post) {
+
+    }
+
+    public  Date getCreatedDate (){
+        DateFormat.getDateTimeInstance().format(createdDate);
+        return createdDate;
+    }
+
+
+
+    //user =albuums;
     //post-songs;
     //create temple for post
 }

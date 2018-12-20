@@ -8,13 +8,22 @@
 </head>
 
 <body>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="/img/user.png" width="30" height="30" alt="">
+        <h3 th:text="${user.username}">username</h3>
+    </a>
+</nav>
 <div class = "container">
+    <form action="/perform_logout" method="POST">
+        <button type="submit" class="btn btn-success"><a href="/login">Logout</a></button>
+    </form>
 <h1>Welcome</h1>
     <h2> User Profile</h2>
     <main>
         <label>Username</label>
         <h3 th:text="${user.username}">username</h3>
-        <img src="/img/user.png" alt="user image"/>
+        <img src="/img/user.png" alt="user image"class="img-thumbnail"/>
         <div>
             <label>First Name</label>
             <span th:text="${user.firstName}"></span>
@@ -29,6 +38,10 @@
             <span th:text="${user.bio}"></span>
 
         </div>
+        <!--<a href="/">HOME</a>-->
+        <button type="submit" class="btn btn-success"><a href="/">HOME</a></button>
+        <button type="submit" class="btn btn-success"><a href="/allposts">POSTS</a></button>
+
     </main>
 
 </div>
