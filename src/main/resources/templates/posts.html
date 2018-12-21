@@ -10,37 +10,40 @@
 <body>
 
 
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="/img/user.png" width="30" height="30" alt="">
-            <h3 th:text="${user.username}">username</h3>
-        </a>
-    </nav>
-    <div class = "container">
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="/img/user.png" width="30" height="30" alt="">
+        <h3 th:text="${user.username}">username</h3>
+    </a>
     <form action="/perform_logout" method="POST">
         <button type="submit" class="btn btn-success"><a href="/login">Logout</a></button>
     </form>
+</nav>
+<div class = "container">
+    <!--<form action="/perform_logout" method="POST">-->
+        <!--<button type="submit" class="btn btn-success"><a href="/login">Logout</a></button>-->
+    <!--</form>-->
     <!--<div>-->
-        <!--<h2>Logged in User</h2>-->
-        <!--<h3 th:text="${user.username}">username</h3>-->
-        <!--<img src="/img/user.png" alt="user image"class="img-thumbnail"/>-->
+    <!--<h2>Logged in User</h2>-->
+    <!--<h3 th:text="${user.username}">username</h3>-->
+    <!--<img src="/img/user.png" alt="user image"class="img-thumbnail"/>-->
     <!--</div>-->
 
 
-<table>
-    <thead>
-    <tr>
-        <th colspan="1">Created</th>
-        <th colspan="1">Post</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="post : ${user.posts}">
-        <td th:text="${post.createdDate}"></td>
-        <td th:text="${post.comment}"></td>
-    </tr>
-    </tbody>
-</table>
+    <table>
+        <thead>
+        <tr>
+            <th colspan="1">Created</th>
+            <th colspan="1">Post</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="post : ${user.posts}">
+            <td th:text="${post.createdDate}"></td>
+            <td th:text="${post.comment}"></td>
+        </tr>
+        </tbody>
+    </table>
 
 
     <form th:action="${'/users/'+user.id+'/post'}" method="POST">
@@ -52,8 +55,8 @@
         <!--<input type="submit" \>-->
     </form>
 
-        <button type="submit" class="btn btn-success"><a href="/">HOME</a></button>
-        <button type="submit" class="btn btn-success"><a href="/myprofile">Profile</a></button>
+    <button type="submit" class="btn btn-success"><a href="/">HOME</a></button>
+    <button type="submit" class="btn btn-success"><a href="/myprofile">Profile</a></button>
 
 
 
