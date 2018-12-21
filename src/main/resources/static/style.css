@@ -7,7 +7,21 @@ text-align:center;
 }
 
 img{
-width:5px;
-height: 5px;
+width:30px;
+height: 30px;
 }
+.center{
 
+text-align: center;
+display: inline-block;
+
+
+}
+.outer-div{
+margin: auto 0px;
+text-align: center;
+display: block;
+}
+button{
+padding: 100px;
+}

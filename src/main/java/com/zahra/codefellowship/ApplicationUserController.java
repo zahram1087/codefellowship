@@ -69,6 +69,7 @@ public class ApplicationUserController {
         }
 
     @RequestMapping("/login")
+//    @ResponseBody
     public String login(){
         return "login";
     }
