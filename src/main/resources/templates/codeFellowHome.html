@@ -6,8 +6,10 @@
     <title>HOME</title>
     <div th:replace="~{common :: head}"></div>
 </head>
-
+<main>
+ <header>
 <body>
+
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">
         <img src="/img/user.png" width="30" height="30" alt="">
@@ -27,14 +29,14 @@
   <p>Dui nunc mattis enim ut tellus elementum sagittis vitae. Amet venenatis urna cursus eget nunc scelerisque. Convallis posuere morbi leo urna molestie at elementum eu. Semper quis lectus nulla at volutpat diam. Orci phasellus egestas tellus rutrum tellus pellentesque eu. Dolor sed viverra ipsum nunc aliquet bibendum enim facilisis. Aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod. Nascetur ridiculus mus mauris vitae ultricies leo integer malesuada. Amet cursus sit amet dictum sit.</p>
 
    <p> Egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices. Vel turpis nunc eget lorem. Elit eget gravida cum sociis natoque penatibus. Scelerisque fermentum dui faucibus in ornare. Odio aenean sed adipiscing diam donec. In eu mi bibendum neque egestas congue. Ultrices gravida dictum fusce ut. Fringilla est ullamcorper eget nulla facilisi etiam. Auctor urna nunc id cursus metus aliquam eleifend mi. Sagittis vitae et leo duis ut diam quam. Id eu nisl nunc mi ipsum faucibus vitae aliquet nec. Fringilla ut morbi tincidunt augue. Tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra. Massa ultricies mi quis hendrerit dolor magna eget est lorem. Massa placerat duis ultricies lacus sed turpis tincidunt id aliquet. Ac feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper.</p>
-
-    <div class = "container">
+<div class = "outer-div">
+    <div class = "center">
     <button type="submit" class="btn btn-success"><a href="/signup">sign UP</a></button>
     <button type="submit" class="btn btn-success"><a href="/myprofile">Profile</a></button>
     <button type="submit" class="btn btn-success"><a href="/allposts">POSTS</a></button>
     <button type="submit" class="btn btn-success"><a href="/login">Login</a></button>
     </div>
-
+</div>
     <!--<a href="/signup">sign UP</a>-->
     <!--<a href="/myprofile">My Profile</a>-->
     <!--<a href="/allposts">POSTS</a>-->
@@ -42,5 +44,7 @@
 
     </div>
 </body>
+ </header>
+</main>
 
 </html>
