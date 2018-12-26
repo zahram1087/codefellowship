@@ -15,7 +15,7 @@ public class ApplicationUser implements UserDetails {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     public long id;
-    @Column(unique = true) //doing?
+    @Column(unique = true)
     public String username;
     public String password;
     public String firstName;
@@ -32,7 +32,7 @@ public class ApplicationUser implements UserDetails {
             joinColumns = { @JoinColumn(name = "follower_id") },
             inverseJoinColumns = { @JoinColumn(name = "followed_id") }
     )
-    Set<ApplicationUser> usersThatIFollow;
+    public Set<ApplicationUser> usersThatIFollow;
 
     @ManyToMany(mappedBy = "usersThatIFollow")
     public Set<ApplicationUser> usersThatFollowMe;
@@ -93,5 +93,9 @@ public String toString (){
 
     public List<Post>getPosts(){
         return posts;
+    }
+
+    public Set<ApplicationUser>getUser(){
+        return usersThatIFollow;
     }
 }

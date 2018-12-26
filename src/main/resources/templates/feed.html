@@ -18,11 +18,13 @@
 <div class = "container">
     <h1>Other Users</h1>
 
-
-    <ul>
-        <li th:each="user : ${users}"><a th:href="${'/users/' + user.id}"></a></li>
-    </ul>
-
+    <table>
+        <tr th:each="post : ${posts}">
+            <td >"<span th:text="${post.comment}"></span>"</td>
+            <td>Was Posted By: <a th:href="'/users/' + ${post.user.id}" th:text="${post.user.username}"></a></td>
+            <td >At: <span th:text="${post.createdDate}"></span></td>
+        </tr>
+    </table>
 
 
 
