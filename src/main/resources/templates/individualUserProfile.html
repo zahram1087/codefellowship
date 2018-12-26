@@ -38,7 +38,24 @@
             <label>Biography</label>
             <span th:text="${user.bio}"></span>
 
+        <form th:action="${'/followed/'+ user.id+'/followers'}" method="POST">
+            <button type="submit" class="btn btn-success" value="FOLLOW">FOLLOW</button>
+        </form>
+
         </div>
+
+        <div th:each="u: ${user.usersThatIFollow}">
+            <label>First Name</label>
+            <span th:text="${u.firstName}"></span>
+
+            <label>Last Name</label>
+            <span th:text="${u.lastName}"></span>
+
+        </div>
+
+
+
+
         <!--<a href="/">HOME</a>-->
         <div class = "outer-div">
             <div class = "center">
@@ -46,6 +63,9 @@
         <button type="submit" class="btn btn-success"><a href="/allposts">POSTS</a></button>
         </div>
         </div>
+
+
+
     </main>
 
 </div>

@@ -40,13 +40,8 @@ public class Post {
     }
 
     public  Date getCreatedDate (){
-        DateFormat.getDateTimeInstance().format(createdDate);
+//        DateFormat.getDateTimeInstance().format(createdDate);
         return createdDate;
     }
 
-
-
-    //user =albuums;
-    //post-songs;
-    //create temple for post
 }

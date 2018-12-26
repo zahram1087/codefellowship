@@ -19,21 +19,13 @@ public class PostController {
     private ApplicationUserRepository userRepo;
 
 
-//    //GET request for posts
-//    @RequestMapping(value="/posts", method= RequestMethod.GET)
-//    public String getPostsPage (Model m) {
-//
-//        return "posts";
-//
-//    }
-
     @RequestMapping(value ="/allposts", method= RequestMethod.GET)
     public String index(Principal p,Model m){
 
         m.addAttribute("user",((UsernamePasswordAuthenticationToken)p).getPrincipal());
         return "posts";
     }
-//
+
     @PostMapping(value="/users/{userId}/post")
     public RedirectView addPost(@PathVariable long userId,
                                @RequestParam String comment){
@@ -41,7 +33,7 @@ public class PostController {
 
         Post post = new Post(comment, new Date());
         post.applicationUser = user;
-//        user.addPost(post);
+
         postRepo.save(post);
         return new RedirectView("/users/{userId}");
 

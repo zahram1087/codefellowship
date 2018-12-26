@@ -1,0 +1,37 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Sign Up</title>
+    <div th:replace="~{common :: head}"></div>
+</head>
+
+<body>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="/img/user.png" width="30" height="30" alt="">
+    </a>
+</nav>
+<div class = "container">
+    <h1>Other Users</h1>
+
+
+    <ul>
+        <li th:each="user : ${users}"><a th:href="${'/users/' + user.id}"></a></li>
+    </ul>
+
+
+
+
+    <div class = "outer-div">
+        <div class = "center">
+            <button type="submit" class="btn btn-success"><a href="/">HOME</a></button>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
